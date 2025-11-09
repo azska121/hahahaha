@@ -513,7 +513,7 @@ function filterMenu() {
       <button type="button">Tambah</button>
     </li>
     <li class="menu-item">
-      <img src="https://noir.web.id/wp-content/uploads/2022/04/kopi-susu-gula-aren.jpg?auto=format&fit=crop&w=72&q=80" alt="Kopi Susu WKS"
+      <img src="https://siroca.co.id/wp-content/uploads/2023/08/cappuccino-6996425_1280.jpg?auto=format&fit=crop&w=72&q=80" alt="Kopi Susu WKS"
            onerror="this.onerror=null;this.src='https://placehold.co/72x72?text=No+Image';" />
       <div class="info">
         <span class="name">Kopi Susu Es</span>
@@ -661,6 +661,15 @@ function filterMenu() {
       </div>
       <button type="button">Tambah</button>
     </li>
+    <li class="menu-item">
+      <img src="https://www.frisianflag.com/storage/app/media/uploaded-files/kopisusu-coconut.jpg?auto=format&fit=crop&w=72&q=80" alt="Tea Tok"
+           onerror="this.onerror=null;this.src='https://placehold.co/72x72?text=No+Image';" />
+      <div class="info">
+        <span class="name">Kopi Susu Vanila</span>
+        <span class="variant">Rp 15.000</span>
+      </div>
+      <button type="button">Tambah</button>
+    </li>
   </ul>
 </section>
 <section id="section-qrcode" style="display:none">
@@ -728,7 +737,7 @@ document.getElementById('order-wa-btn').onclick = function() {
     total += order.price * order.qty;
   });
   pesan += `\n*Total: Rp ${total.toLocaleString('id-ID')}*`;
-  const waUrl = 'https://wa.me/62895428534904?text=' + encodeURIComponent(pesan);
+  const waUrl = 'https://wa.me/6285876068437?text=' + encodeURIComponent(pesan);
   window.open(waUrl, '_blank');
 };
 </script>
@@ -855,6 +864,7 @@ function addMieWithTelur(btn) {
   updateOrderList();
 }
 </script>
+
 
 
 

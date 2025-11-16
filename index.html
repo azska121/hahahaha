@@ -498,7 +498,16 @@ function filterMenu() {
       </div>
       <button type="button">Tambah</button>
     </li>
-    <li class="menu-item">
+     <li class="menu-item">
+      <img src="https://img.inews.co.id/files/inews_new/2020/08/28/resep_nasi_bakar_cumi_sambalado.jpg?auto=format&fit=crop&w=72&q=80" alt="Sego Bakar"
+           onerror="this.onerror=null;this.src='https://placehold.co/72x72?text=No+Image';" />
+      <div class="info">
+        <span class="name">Sego Bakar</span>
+        <span class="variant">Rp 8.000</span>
+      </div>
+      <button type="button">Tambah</button>
+    </li>
+     <li class="menu-item">
       <img src="https://www.afarmgirlsdabbles.com/wp-content/uploads/2022/04/Teriyaki-Chicken-Poke-Bowls_afarmgirlsdabbles_01v-250x325.jpg?auto=format&fit=crop&w=72&q=80" alt="Sego Bakar"
            onerror="this.onerror=null;this.src='https://placehold.co/72x72?text=No+Image';" />
       <div class="info">
@@ -543,6 +552,7 @@ function filterMenu() {
       </div>
       <button type="button">Tambah</button>
     </li>
+
   </ul>
 </section>
 
@@ -558,7 +568,7 @@ function filterMenu() {
       <button type="button">Tambah</button>
     </li>
     <li class="menu-item">
-      <img src="https://siroca.co.id/wp-content/uploads/2023/08/cappuccino-6996425_1280.jpg?auto=format&fit=crop&w=72&q=80" alt="Kopi Susu WKS"
+      <img src="https://siroca.co.id/wp-content/uploads/2023/08/cappuccino-6996425_1280.jpg?cb=ucfimg2ucfimg=1&w=600&h=600&rs=1&pid=ImgDetMain&o=7&rm=3?o=7&cb=ucfimg2rm=3&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3?auto=format&fit=crop&w=72&q=80" alt="Kopi Susu WKS"
            onerror="this.onerror=null;this.src='https://placehold.co/72x72?text=No+Image';" />
       <div class="info">
         <span class="name">Kopi Susu Es</span>
@@ -687,7 +697,6 @@ function filterMenu() {
       </div>
       <button type="button">Tambah</button>
     </li>
-     </li>
      <li class="menu-item">
       <img src="https://www.dessertfortwo.com/wp-content/uploads/2023/02/Banana-Milkshake-8-540x720.jpg?auto=format&fit=crop&w=72&q=80" alt="Chocolate Milk"
            onerror="this.onerror=null;this.src='https://placehold.co/72x72?text=No+Image';" />
@@ -697,7 +706,7 @@ function filterMenu() {
       </div>
       <button type="button">Tambah</button>
     </li>
-     <li class="menu-item">
+    <li class="menu-item">
       <img src="https://www.lacademie.com/wp-content/uploads/2022/03/bac-xiu-857x1024-jpg.webp?auto=format&fit=crop&w=72&q=80" alt="kopsu butterscotch"
            onerror="this.onerror=null;this.src='https://placehold.co/72x72?text=No+Image';" />
       <div class="info">
@@ -736,7 +745,7 @@ function filterMenu() {
 <!-- ...existing code... -->
 <div style="margin-bottom:10px;">
     <label for="customer-name" style="font-weight:600;">Nama Customer:</label>
-    <input id="customer-name" type="text" placeholder="Isi nama kamu..." style="margin-left:8px;padding:6px 10px;border-radius:6px;border:1px solid #ddd;width:220px;" />
+    <input id="customer-name" type="text" placeholder="Isi nama customer..." style="margin-left:8px;padding:6px 10px;border-radius:6px;border:1px solid #ddd;width:220px;" />
 </div>
 <!-- ...existing code... -->
   <ul id="order-list" style="list-style:none;padding:0;margin:0 0 10px 0;"></ul>
@@ -750,9 +759,9 @@ function filterMenu() {
 </div>
 <script>
 document.getElementById('order-wa-btn').onclick = function() {
-   const customerName = document.getElementById('customer-name').value.trim();
+  const customerName = document.getElementById('customer-name').value.trim();
   if (!customerName) {
-    alert('Silakan isi nama terlebih dahulu!');
+    alert('Silakan isi nama customer terlebih dahulu!');
     document.getElementById('customer-name').focus();
     return;
   }
@@ -763,7 +772,7 @@ document.getElementById('order-wa-btn').onclick = function() {
   }
  
   let pesan = '*WEKAES MENU - Pesanan Anda*\n\n';
-  pesan += `*No. Meja:* ${noMeja}\n\n`;
+  pesan += `*Nama:* ${customerName}\n\n`;
   let total = 0;
   orders.forEach((order, idx) => {
     pesan += `${idx+1}. ${order.name} x${order.qty} - Rp ${order.price.toLocaleString('id-ID')}\n`;
@@ -778,13 +787,13 @@ document.getElementById('order-wa-btn').onclick = function() {
 document.getElementById('print-pdf-btn').onclick = function() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
-  const noMeja = document.getElementById('no-meja').value.trim();
+  const customerName = document.getElementById('customer-name').value.trim();
 
   doc.setFontSize(16);
   doc.text("WEKAES MENU", 10, 15);
   doc.setFontSize(12);
   doc.text("Struk Pesanan", 10, 25);
-  doc.text(`No. Meja: ${noMeja || '-'}`, 10, 32);
+  doc.text(`Nama: ${customerName || '-'}`, 10, 32);
 
 
   let y = 40;
@@ -897,9 +906,3 @@ function addMieWithTelur(btn) {
   updateOrderList();
 }
 </script>
-
-
-
-
-
-

@@ -735,20 +735,8 @@ function filterMenu() {
   <h3 style="margin:0 0 10px 0;font-size:16px;font-weight:700;color:#e94e1b;">Pesanan Anda</h3>
 <!-- ...existing code... -->
 <div style="margin-bottom:10px;">
-    <label for="no-meja" style="font-weight:600;">No. Meja:</label>
-    <select id="no-meja" style="margin-left:8px;padding:4px 10px;border-radius:6px;border:1px solid #ddd;width:90px;">
-      <option value="">Pilih meja</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select>
+    <label for="customer-name" style="font-weight:600;">Nama Customer:</label>
+    <input id="customer-name" type="text" placeholder="Isi nama kamu..." style="margin-left:8px;padding:6px 10px;border-radius:6px;border:1px solid #ddd;width:220px;" />
 </div>
 <!-- ...existing code... -->
   <ul id="order-list" style="list-style:none;padding:0;margin:0 0 10px 0;"></ul>
@@ -762,10 +750,10 @@ function filterMenu() {
 </div>
 <script>
 document.getElementById('order-wa-btn').onclick = function() {
-  const noMeja = document.getElementById('no-meja').value.trim();
-  if (!noMeja) {
-    alert('Silakan isi nomor meja terlebih dahulu!');
-    document.getElementById('no-meja').focus();
+   const customerName = document.getElementById('customer-name').value.trim();
+  if (!customerName) {
+    alert('Silakan isi nama terlebih dahulu!');
+    document.getElementById('customer-name').focus();
     return;
   }
 
@@ -909,6 +897,7 @@ function addMieWithTelur(btn) {
   updateOrderList();
 }
 </script>
+
 
 
 
